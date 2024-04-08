@@ -6,25 +6,6 @@ from helper import get_rovers_list,find_rover_by_id,add_new_rover,delete_rover,s
 
 app = FastAPI()
 
-origins = [
-    "http://localhost:8000",
-    "http://localhost:3000",
-    "http://127.0.0.1:8000",
-    "http://127.0.0.1:3000",
-    "http://localhost:80",
-    "http://127.0.0.1:80",
-    "http://localhost",
-    "null",
-]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
 # -------------------------------------------------------------------------------------------- Map Requests 
 # --------------------------------------------------------------- GET Map 
 @app.get("/map")
